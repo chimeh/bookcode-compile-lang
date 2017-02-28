@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang = "en">
+  <head>
+    <title> Lab 6, Objective 2 </title>
+    <meta charset="utf-8">
+    <script>
+      // Declaring an array to hold the numbers
+      var numberArray = [88, 43, 66, 100, 22];
+      // Declaring a variable to hold the result of the conditional test
+      var result =  0;
+      // Iterating through each element in the array
+      for(var i = 0; i < numberArray.length; i++){
+        // Testing to see if the value of the current element in the iteration is greater than what is stored in the result variable
+        // If it is, assign the new value to the 'result' variable.
+        if(numberArray[i] > result){
+          result = numberArray[i]
+        }
+      }
+      // Checking to see if numbers were entered into the numberArray
+      if(result == 0){
+        // Letting the user know a condition was not met for this objective
+        console.log("You did not enter any positive numbers into the numberArray");
+      }else {
+        // Outputting result to the log
+        console.log(result);
+      }
+   </script>
+<body>
+</body>
+</html>

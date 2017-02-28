@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>  The Window Object </title>
+  <meta charset="utf-8">
+  <script>
+    window.onload = init;
+    
+    function init(){
+        alert("hey 1");
+        window.alert("hey 2");
+    
+        console.log("Yo 1");
+        window.console.log("Yo 2");
+    
+	var p = window.document.getElementById("theP");
+    	window.console.log(p.innerHTML);
+   }
+  </script>
+  <body>
+    <p id="theP">I'm a paragraph</p>
+  </body>
+  </html>

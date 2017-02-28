@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title> Object Methods </title>
+  <meta charset="utf-8">
+  <script>
+    window.onload = init;
+    
+    function Pet (type, name, weight, likes, sound){
+      this.type = type;
+      this.name = name;
+      this.weight = weight;
+      this.likes = likes;
+      this.sound = sound;
+      
+      this.speak = function(howMany){
+        var says = "";
+        for(var i = 0; i < howMany; i++){
+          says += sound + " ";
+        }
+        return says;
+      }
+    }
+    
+    function init(){
+      var annie = new Pet("cat", "Annie", 6, ["sleeping", "teasing pickles"], "Meow");
+      var willie = new Pet("dog", "Willie", 45, ["slobbering", "panting", "eating"], "Woof!");
+      
+      var div = document.getElementById("pets");
+      div.innerHTML = willie.name + " says " + willie.speak(3);
+      
+      annie.sound = "Purrr";
+      div.innerHTML += "<br>" + annie.name + " says " + annie.speak(2);
+      
+    }
+  </script>
+</head>
+<body>
+  <div id="pets">
+  </div>
+</body>
+</html>

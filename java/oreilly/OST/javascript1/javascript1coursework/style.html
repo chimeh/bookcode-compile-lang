@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Setting Style with JavaScript</title>
+  <meta charset="utf-8">
+  <style>
+    div#container {
+        display: table;
+        border-spacing: 10px;
+    }
+    div.box {
+        color: white;
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+    }
+    div#div1 {
+        display: table-cell;
+        background-color: blue;
+    }
+    div#div2 {
+        display: table-cell;
+        background-color: darkgreen;
+    }
+    div#div3 {
+        display: table-cell;
+        background-color: purple;
+    }
+  </style>
+  <script>
+    window.onload = init;
+
+    function init() {
+        var div1 = document.getElementById("div1");
+        div1.onclick = changeVisibility;
+
+        var div2 = document.getElementById("div2");
+        div2.onclick = changeColor;
+
+        var div3 = document.getElementById("div3");
+        div3.onclick = changeBorder;
+    }
+
+    function changeVisibility() {
+        var div1 = document.getElementById("div1");
+        div1.style.visibility = "hidden";
+    }
+    function changeColor() {
+        var div2 = document.getElementById("div2");
+        div2.style.backgroundColor = "red";
+        div2.style.color = "black";
+    }
+    function changeBorder() {
+        var div3 = document.getElementById("div3");
+        div3.style.borderWidth = "5px";
+        div3.style.borderColor = "black";
+        div3.style.borderStyle = "solid";
+    }
+  </script>
+</head>
+<body>
+<div id="container">
+
+<div class="box" id="div1">
+Click me to make me invisible!
+</div>
+
+<div class="box" id="div2">
+Click me to change my color!
+</div>
+
+<div class="box" id="div3">
+Click me to change my border!
+</div>
+
+</div>
+</body>
+</html> 

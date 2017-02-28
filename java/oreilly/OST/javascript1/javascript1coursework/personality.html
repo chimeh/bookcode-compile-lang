@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>  Personality Quiz </title>
+  <meta charset="utf-8">
+  <script>
+    window.onload = init;
+    
+    function init(){
+      var submitButton = document.getElementById("submitButton");
+      submitButton.onclick = getData;
+    }
+    
+    function getData(){
+      var theForm = document.forms.theForm;
+      var color = theForm.elements.color.value;
+      var results = document.getElementById("results");
+      results.innerHTML = "Favorite color: " + color;
+    }
+  </script>
+</head>
+<body>
+  <h1>Personality Quiz</h1>
+  <form id="theForm">
+    <p>
+    <label for="color">What is your favorite color?</label>
+    <input type="text" id="color" placeholder="blue" required>
+    </p>
+    <p>Are you...</p>
+    <input type="checkbox" id="funny" name="personality" value="funny">
+      <label for="funny">funny</label>
+    <input type="checkbox" id="smart" name="personality" value="smart">
+      <label for="smart">smart</label>
+    <input type="checkbox" id="shy" name="personality" value="shy">
+      <label for="shy">shy</label>
+    <input type="checkbox" id="outgoing" name="personality" value="outgoing">
+      <label for="outgoing">outgoing</label>
+    <br>
+    <p>Tell us a little about yourself:</p>
+    <textarea id="aboutme" name="textarea" rows="12" cols="38">
+    </textarea>
+    <br>
+    <label for="date">What's your birthday?</label>
+    <input id="date" name="date" type="date">
+    <input id="submitButton" type="button" value="Submit">
+  </form>
+  <h2>Results</h2>
+  <div id="results">
+  </div>
+</body>
+</html>

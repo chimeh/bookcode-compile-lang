@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ost.android2.MediaInventory"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="10" />
+    
+      <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/MediaTheme"  >
+        
+        <activity
+            android:name="com.ost.android2.MediaInventory.MediaListActivity"
+            android:label="@string/title_activity_list" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+                
+        <activity
+            android:name="com.ost.android2.MediaInventory.MediaActivity"
+            android:label="@string/title_activity_detail" >
+        </activity>
+        
+         <activity
+            android:name="com.ost.android2.MediaInventory.MediaBrowserActivity"
+            android:label="@string/title_activity_web" >
+        </activity>
+        
+        <activity
+            android:name="com.ost.android2.MediaInventory.MediaURLListActivity"
+            android:label="@string/title_activity_url_list" >
+        </activity>
+        
+         <activity
+            android:name="com.ost.android2.MediaInventory.MediaURLActivity"
+            android:label="@string/title_activity_url_detail" >
+        </activity>
+
+        <activity android:name="com.ost.android2.MediaInventory.MediaPreferenceActivity"
+                  android:label="@string/title_activity_my_preferences" >
+        </activity>
+        
+        <provider
+            android:authorities="com.ost.android2.MediaInventory.contentprovider" 
+            android:exported="false"          
+            android:name=".MediaInventoryContentProvider"  />
+
+        
+        <provider
+             android:authorities="com.ost.android2.MediaURL.contentprovider"
+             android:exported="false"          
+             android:name=".MediaURLContentProvider" />
+ 
+
+    </application>
+
+</manifest>

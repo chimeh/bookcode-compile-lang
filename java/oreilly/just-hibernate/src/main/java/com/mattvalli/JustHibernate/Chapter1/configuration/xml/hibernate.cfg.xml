@@ -1,0 +1,23 @@
+<hibernate-configuration>
+	<!-- SessionFactory		- MySQL5 DATABASE -		JH -->
+	<session-factory>
+		<!-- CONNECTION PROPERTIES -->
+		<property name="connection.url">jdbc:mysql://localhost:3307/JH</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.user">just-hibernate</property>
+		<property name="connection.password">test-hibernate</property>
+		
+		<!-- DATABASE PROPERTIES -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		
+		<!-- MAPPING RESOURCES -->
+		<mapping resource="Movie.hbm.xml" />
+	</session-factory>
+	
+	<!-- *******************	ADDITIONAL DATABASE CONFIGURATIONS		******************* -->
+	<!-- SessionFactory		-   MySQL5 DATABASE	-		SecondDatabase 	-->
+	
+	<!-- SessionFactory		- 	MongoDB			-		DatabaseName	-->
+	
+	
+</hibernate-configuration>

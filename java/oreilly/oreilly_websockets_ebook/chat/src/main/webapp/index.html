@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Simple Chat over WebSocket</title>
+        
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body lang="en">
+        
+        <div class="container">
+            <div id="messages-empty">
+                <h3 class="text-center">no messages yet...</h3>
+            </div>
+            <div id="messages">
+            </div>
+        </div>
+        
+        <div class="container">
+            <form id="new-message-form">
+                <div class="form-group">
+                    <label for="name">Your name:</label>
+                    <input type="text" name="name" value="" id="name" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label for="text">Message:</label>
+                    <textarea rows="10" class="form-control" id="text"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="js/chat.js"></script>
+    </body>
+</html>    

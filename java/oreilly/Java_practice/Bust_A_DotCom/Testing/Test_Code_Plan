@@ -1,0 +1,85 @@
+Test code should instantiate an instance of the object and run its methods.
+
+Code should be well planned before it is written.  Code should be compiled as frequently as possible in as many stages as possible.
+
+Test code for DotComBust:
+
+There are 4 methods in the DotComBust class:
+
+    setUpGame()
+
+    startPlaying()
+
+    checkUserGuess()
+
+    finishGame()
+
+Each method should have it's own test program.
+
+Each condition tested should have it's own test program.
+
+To know what conditions to test, one should know what the method can do.
+
+    setUpGame() does what:
+
+        Creates Dot Coms.
+
+        Gives locations to Dot Coms.
+
+        Names the Dot Coms.
+
+        Puts the Dot Coms in a list.
+
+    setUpGame() conditions to test
+
+        Can it create a Dot Com?
+
+        Can it set the Dot Com's location(s)?
+
+        Can it name the Dot Com?
+
+        Can it add the Dot Com to an array list?
+
+    startPlaying() does what:
+
+        Checks if the list is empty.
+
+        Prompts the user for a guess.
+
+        Checks the guess is correct.
+
+        Ends the game.
+
+    startPlaying() conditions to test:
+
+        Can it check the list?  Can it tell it is empty?
+
+        Can it prompt the user for a guess?
+
+        Can it check the guess is correct?
+
+        Can it end the game?
+
+    checkUserGuess(String userGuess) does what:
+
+        Adds 1 to the number of guesses
+
+        Checks the user's guess against the listed locations of the listed Dot Coms
+
+        Prints the result of the user's guess
+
+    checkUserGuess(String userGuess) conditions to test:
+
+        Can it add 1 to the number of guesses?
+
+        Can it check the user's guess using the Dot Com's checkYourself() method?
+
+        Can it print the result?
+
+    finishGame() does what:
+
+        Prints the final game result
+
+    finishGame conditions to test:
+
+        Can it Print the final result?

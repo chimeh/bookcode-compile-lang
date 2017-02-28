@@ -1,0 +1,6 @@
+with dot .
+yet another .
+a line with a .
+a . within a .
+this line does not have a dot
+...............

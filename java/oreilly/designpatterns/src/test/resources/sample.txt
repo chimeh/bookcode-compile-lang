@@ -1,0 +1,2 @@
+The Decorator PATTERN attaches additional RESPONSIBILITIES to an object dynamically.
+Decorators PROVIDE a flexible ALTERNATIVE to subCLASSING for exTeNdiNg functionalITY.!

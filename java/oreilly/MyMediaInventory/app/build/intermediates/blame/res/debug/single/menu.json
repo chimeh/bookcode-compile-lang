@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\menu\\media.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\menu\\media.xml"
+    },
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\menu\\media_url.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\menu\\media_url.xml"
+    },
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\menu\\media_pref.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\menu\\media_pref.xml"
+    },
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\menu\\delete_url_context.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\menu\\delete_url_context.xml"
+    },
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\menu\\delete_item_context.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\menu\\delete_item_context.xml"
+    },
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\menu\\media_url_pref.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\menu\\media_url_pref.xml"
+    }
+]

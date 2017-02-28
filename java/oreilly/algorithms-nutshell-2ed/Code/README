@@ -1,0 +1,33 @@
+This directory contains the C and C++ code solutions as coded in the
+O'Reilly book "Algorithm in a Nutshell", Second Edition, by George
+Heineman, Gary Pollice, and Stanley Selkow, (C) 2016.
+
+INSTALLATION
+
+  Simply unzip the installation.zip file
+
+VALIDATE
+
+  To see if you have all the tools required to properly build and run the
+  examples within this directory, type 'make validate' in this top-level
+  directory.
+
+BUILD
+
+  To build, type 'make' in this top-level directory.
+
+DOCUMENTATION
+
+  To build the Doxygen documentation, type 'make doxygen'
+
+TEST
+
+  To test all available test cases, type 'make test' in this top-level
+  directory.
+
+CLEAN
+
+  To clean all available (sub)directories, type 'make clean' in this
+  top-level directory.
+
+

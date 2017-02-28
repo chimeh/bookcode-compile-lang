@@ -1,0 +1,6 @@
+BIKER|name=Tom;age=22;contestantID=45476;isInjured=false;usingClips=true
+SWIMMER|name=Tanya;age=44;contestantID=45477;isInjured=false
+RUNNER|name=Perry;age=18;contestantID=45478;isInjured=false;shoeBrand=Asics
+RUNNER|name=David;age=31;contestantID=45479;isInjured=false;shoeBrand=Adidas
+BIKER|name=Neil;age=44;contestantID=45480;isInjured=false;usingClips=false
+SWIMMER|name=Sonya;age=28;contestantID=45481;isInjured=false

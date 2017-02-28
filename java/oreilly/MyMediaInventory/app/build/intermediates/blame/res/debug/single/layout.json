@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_media.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\layout\\fragment_media.xml"
+    },
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_url.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\layout\\list_url.xml"
+    },
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_container.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\layout\\fragment_container.xml"
+    },
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_media_url.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\layout\\fragment_media_url.xml"
+    },
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_browser.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\layout\\fragment_browser.xml"
+    },
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_media.xml",
+        "source": "D:\\Users\\Gregg\\StudioProjects\\MyMediaInventory\\app\\src\\main\\res\\layout\\list_media.xml"
+    }
+]

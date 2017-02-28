@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title> Output to a Page</title>
+  <meta charset="utf-8">
+  <script>
+    window.onload = init;
+    function init(){
+      var output = "";
+    for(var mms = 5; mms > 0; mms--){
+      if(mms >=3){
+        output += ("Still lots of M&Ms left, so eat more!");
+       } else{
+        output += ("Getting low on M&Ms, take it easy!");
+      }
+    }
+    output += "All out of M&amp;Ms";
+    var p = document .getElementById("output");
+    p.innerHTML = output;
+    }
+  </script>
+</head>
+<body>
+  <p id="output"></p>
+</body>
+</html>

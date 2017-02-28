@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calling Card</title>
+<link rel="stylesheet" type="text/css" href="jsproject.css" />
+<script type="text/javascript">
+<!--
+	//var outputWindow= window.open("output2.html","Calling Card","width=600, height=550,scrollbars=0,toolbar=0,resizeable=0,menubar=0,location=0");
+	
+    //outputResults();
+    
+
+document.getElementById('TestPane').style.visibility == 'hidden';
+function checkCreateText(){
+    var element=outputWindow.document.createElement('h1');
+    var eleTwo=outputWindow.document.createElement('h3');
+    var text=outputWindow.document.createTextNode('David Bethke');
+    var address=outputWindow.document.createTextNode('8009 Fierro Cove Austin,TX, USA');
+    element.appendChild(text);
+    eleTwo.appendChild(address);
+    outputWindow.document.getElementById('header').appendChild(element);
+    outputWindow.document.getElementById('main').appendChild(eleTwo);
+}
+    
+function validate(){
+    var f =document.forms[0];
+    var fName=document.getElementById('firstName');
+    var lName=document.getElementById('lastName');
+    var address=document.getElementById('address');
+    var city=document.getElementById('city');
+    var zip=document.getElementById('zip');
+    var country=document.getElementById('country');
+    var occupation=document.getElementById('occupation');
+    var education=document.getElementById('education');
+    var hobbies=document.getElementById('hobbies');
+    //check empty
+    for(var i=0; i < document.forms[0].elements.length; i++){
+        checkEmpty(f.elements[i],'Check Empty '+ f.elements[i].name);      
+    }
+    checkLettersOnly(fName,'Last Name letters only');
+    checkLettersOnly(lName,'First Name letters only');
+    checkAlphaNumeric(address,'Address letters/numbers only');
+    checkLettersOnly(city,'City letters only');
+    checkNumbersOnly(zip,'Zip numbers Only');
+    checkLength(zip,5,5,'Zip must be 5 numbers');
+    checkSelection(country,'Select Your Country','Pick A Country from the List');
+    checkLettersOnly(occupation,'Occupation letters only');
+    checkSelection(education,'Enter Highest Education','Pick education from the List');
+    checkLength(hobbies,1,200,'Max 200 chars');
+    return false;  
+}
+function outputResults(){
+   
+    setTimeout("",5000);
+    checkCreateText();
+    
+}
+
+function checkEmpty(element,message){
+    if(element.value.length == 0){
+        showAlert(element,message);
+    }
+    return true;
+}
+function checkNumbersOnly(element,message){
+    var numericExpression= /^[0-9]+$/;
+    if(element.value.match(numericExpression)){
+        return true;
+    }else{
+        showAlert(element,message);
+        
+    }
+}
+function checkLettersOnly(element,message){
+    var letterExpression =/^[a-zA-Z]+$/;
+    if(element.value.match(letterExpression)){
+        return true;
+    }else{
+        showAlert(element,message);
+    }
+}
+function checkLength(element,minVal, maxVal,message){
+    if(element.value.length >= minVal && element.value.length <= maxVal){
+        return true;
+    }else{
+        showAlert(element,message);
+    }
+}
+function checkEmail(element,message){
+    var validExpression=/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-Z0-9]{2,4}$/;
+    if(element.value.match(validExpression)){
+        return true;
+    }else{
+        showAlert(element,message);
+    }
+}
+function checkSelection(element,badMatch,message){
+    
+    if(element.value==badMatch){
+        showAlert(element,message);
+    }else{
+        return true;
+    }
+}
+function checkAlphaNumeric(element,message){
+    var alphaNumeric=/^[0-9a-zA-Z\s]+$/;
+    if(element.value.match(alphaNumeric)){
+        return true;
+    }else{
+        showAlert(element,message);
+    }
+}
+
+function showAlert(element,message){
+    alert(message);
+    element.focus();
+    return false;
+}
+function toggleTestPane(){
+    if(document.getElementById('TestPane').style.visibility == 'hidden'){
+        document.getElementById('TestPane').style.visibility='visible';
+    }else{
+        document.getElementById('TestPane').style.visibility='hidden';
+    }
+}
+
+    
+
+//-->
+</script>
+</head>
+<body>
+	<div id="container">
+	<div id="header">
+		<h1>
+			Calling Card
+		</h1>
+	</div>
+	<div id="navigation">
+		Publish Yourself to the World
+	</div>
+	<div id="content-container">
+		<div id="content">
+			<h2>
+				Fill Out the Form Completely
+			</h2>
+			<form name="form1"  method="get" onSubmit="return validate();">
+		<div class='formBorder'>
+        		First Name:<input type ="text" id='firstName' name="firstName" size="20" ><br/>
+				Last Name:<input type ="text" id='lastName' name="lastName" size="20" ><br/>
+        		Street Address:<input type ="text" id='address' name="address" size="30" ><br/>	
+        		City:<input type ="text" id='city' name="city" size="20" ><br/>
+				Zip:<input type ="text" id='zip'  name="zip" size="5" ><br/>
+				Country:<select id="country"name="country" ><br/>
+            	<option>Select Your Country</option><br/>
+            	<option>USA</option>
+            	<option>UK</option>
+            	<option>Canada</option>
+            	<option>Mexico</option>
+        		</select>
+				Occupation:<input type ="text" id='occupation' name="occupation" size="30" ><br/>
+				Education Level:<select id='education'name='education'><br/>
+            	<option>Enter Highest Education</option><br/>
+            	<option>High School</option>
+            	<option>Some College</option>
+            	<option>College Degree (2yr)</option>
+            	<option>College Degree (4yr)</option>
+            	<option>Graduate School</option>
+            	<option>Post Graduate School</option>
+        	</select>
+			<p>Hobbies:(max length 200 chars)</p>
+        		<textarea  id='hobbies' name="hobbies" rows='8' cols='30'></textarea>
+        		<input type="submit" value="Create Your Calling Card">
+				</div>
+        	</form>
+		
+		</div>
+		<div id="aside">
+			<h3>
+				Calling Cards
+			</h3>
+			<p>
+Use them for your Family, Friends, Business Associates. Be your own Facebook.			</p>
+		</div>
+		<div id="footer">
+		For Personal or Business, Your One Source for Calling Cards         Calling Card Inc. 2011
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

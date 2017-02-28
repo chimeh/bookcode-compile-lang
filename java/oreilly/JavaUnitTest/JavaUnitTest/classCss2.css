@@ -1,0 +1,70 @@
+#TestPane{text-align:center;color:red;visibility:hidden}
+
+body{
+    margin:0;
+    padding:0;
+    border:0;
+    width:100%;
+    background:#fff;
+    font-size:90%;
+}
+.header {
+        clear:both;
+        float:left;
+        width:100%;
+}
+.mainOuter{
+        position:relative;
+        clear:both;
+        float:left;
+        width:100%;
+        overflow:hidden;
+       
+}
+
+.colLeft {
+        float:left;
+        width:100%;
+        position:relative;
+}
+
+.formEntry,
+.left,
+.right {
+        float:left;
+        position:relative;
+        padding:0 0 1em 0;
+        overflow:hidden;
+}
+.threecol {
+        background:yellow;
+        
+}
+.threecol .main{
+        right:80%;
+        background:#fff;
+}
+
+.threecol .colLeft{
+    right:50%;
+    background:blue;
+}
+.threecol .formEntry {
+        width:46%;
+        left:102%
+}
+.threecol .left {
+        width:21%;
+        left:31%;
+}
+.threecol .right{
+        width:21%;
+        left:85%
+}
+.footer {
+    clear:both;
+    float:left;
+    width:100%;
+    border-top:1px solid #000;
+}
+

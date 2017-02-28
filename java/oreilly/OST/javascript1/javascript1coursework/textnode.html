@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title> Playing with Text Nodes </title>
+  <meta charset="utf-8">
+  <script>
+    window.onload = init;
+    
+    function init(){
+      var paras = document.querySelectorAll("div#article p");
+      for(var i=0; i < paras.length; i++){
+        paras[i].style.backgroundColor = "#acacac";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="article">
+    <p id="p1">
+      This is the first paragraph in my brilliant article.
+    </p>
+    <p id="p2">
+      This is the second paragraph. Is my article getting too long?
+    </p>
+  </div>
+</body>
+</html>
+  

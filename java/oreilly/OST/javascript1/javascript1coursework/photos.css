@@ -1,0 +1,50 @@
+body {
+     font-family: helvetica, verdana, sans-serif;
+}
+ul {
+   margin: 0px;
+   padding: 0px;
+   list-style: none;
+}
+
+ul li {
+      display: inline-block;
+      position: relative;
+}
+
+ul li span {
+           padding: 2px 12px 2px 7px;
+           background-color: #bebebe;
+           display:block;
+}
+
+ul li ul {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    left: 0px;
+    top: 5px;
+    width: 100%;
+    visibility: hidden;
+}
+ul li ul li {
+    padding: 2px 7px 2px 7px;
+    display: block;
+}
+ul li ul li:hover {
+    background-color: #bebebe;
+}
+ul li ul li a {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+span:hover {
+    cursor: hand;
+    cursor: pointer;
+    user-select: none;
+}
+.show {
+    visibility: visible;
+    background-color: #990000;
+}             

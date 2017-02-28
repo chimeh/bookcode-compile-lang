@@ -1,0 +1,50 @@
+<project name = "bank" default = "test">
+	<property name ="src.dir" location="/Users/davidbethke/git/JavaUnitTest/repo/JavaUnitTest"/>
+	<property name="src.java.dir" location="${src.dir}/BankExample/com/bigshoulders/JUnitInAction"/>
+	<property name="src.test.dir" location="${src.dir}/test"/>
+	<property name="target.dir" location="target"/>
+	<property name="target.classes.java.dir" location="${target.dir}/classes/java"/>
+	<property name="target.classes.test.dir" location="${target.dir}/classes/test"/>
+	
+	<target name="compile.java">
+		<mkdir dir="${target.classes.java.dir}"/>
+		<javac destdir="${target.classes.java.dir}">
+			<src path="${src.java.dir}"/>
+		</javac>
+	</target>
+	
+	<target name="compile.test" depends="compile.java">
+		<mkdir dir="${target.classes.test.dir}"/>
+		<javac destdir="${target.classes.test.dir}">
+			<src path="${src.test.dir}"/>
+				<classpath>
+					<pathelement location="${target.classes.java.dir}"/>
+				</classpath>
+		</javac>
+	</target>
+	
+	<target name="compile" depends="compile.java, compile.test"/>
+	<path id="junit4">
+			<pathelement location="/Users/davidbethke/springsource/sts-2.6.0.SR1/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+			<pathelement location ="/Users/davidbethke/junit.jar"/>
+	</path>
+
+
+		
+	
+	<target name="test" depends="compile">
+		<junit printsummary="yes" haltonerror="no" haltonfailure="no" fork="no">
+			<formatter type="xml" usefile="true"/>
+			<test name="com.bigshoulders.JUnitInAction.BankTests"/>
+			<classpath>
+				<pathelement location ="/Users/davidbethke/junit.jar"/>
+				<pathelement location="/Users/davidbethke/springsource/sts-2.6.0.SR1/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+				<pathelement location="${target.classes.java.dir}"/>
+				<pathelement location="${target.classes.test.dir}"/>
+			</classpath>
+		</junit>
+	</target>
+			
+		
+	
+</project>

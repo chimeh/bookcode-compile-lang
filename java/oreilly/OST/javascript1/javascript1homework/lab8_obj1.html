@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <title> Functions </title>
+ <meta charset="utf-8">
+ <script>
+ window.onload = init;
+
+ function init() {
+  // your code here to set up a button click handler
+  // when the button is clicked, we want to call pythagoras()
+  var button = document.getElementById("submit");
+  button.onclick = pythagoras;
+ }
+
+ // Computes the length of side c of a triangle, given
+ // the lengths of side a and b, using the Pythagorean Theorem
+ 
+ //This function is a handler for the 'submit' button's onclick event
+ function pythagoras() {
+  // your code here to get the values of sides and b
+  // remember to convert a and b to numbers (using parseFloat)
+  var a = parseInt(document.getElementById("a").value);
+  var b = parseInt(document.getElementById("b").value);
+  // your code here to compute the value of side c
+  var c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+
+  // your code here to call the function displayResult
+  displayResult(a, b, c);
+ }
+
+
+ function displayResult(a, b, c) {
+  var div = document.getElementById("result");
+  div.innerHTML = "Triangle: a = " + a + ", b = " + b + ", c = " + c;
+ }
+ </script>
+</head>
+<body>
+ <form>
+ <label for="a">Enter lengths for sides a: </label>
+ <input type="number" id="a" size="3">
+ <label for="b"> and b: </label>
+ <input type="number" id="b" size="3"> <br>
+ <input type="button" id="submit" value="Compute c!">
+ </form>
+ <div id="result">
+ </div>  
+</body>
+</html>

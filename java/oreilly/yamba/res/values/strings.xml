@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Yamba</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="titleStatus">Status Update</string>
+    <string name="titlePrefs">Preferences</string>
+    <string name="titlePurge">Purge</string>
+    <string name="msgAllDataPurged">All data purged</string>
+    <string name="buttonUpdate">Update</string>
+    <string name="hintText">Please enter your 140 characters status</string>
+    <string name="title_activity_preferences">Preferences</string>
+    <string name="msgSetupPrefs">Preferences</string>
+    <string name="titleServiceStart">Start service</string>
+    <string name="titleServiceStop">Stop service</string>
+    <string name="titleApiRoot">Api Root</string><string name="titlePassword">Password</string><string name="titleUsername">Username</string>
+    <string name="summaryApiRoot">api root URL</string><string name="summaryPassword">password login information</string><string name="summaryUsername">username login information</string>
+ 	<string name="titleTimeline">Timeline</string>
+</resources>

@@ -1,0 +1,16 @@
+Java Programming 4: Java Application Building
+Lesson 2, Project 1
+Here are your instructions:
+Create a program that has a two dimensional array populated with at least 5 rows as follows. Each row should have seven columns:
+
+String[] columnNames = {"First Name",
+      "Last Name",
+      "Birthday",
+      "Phone",
+      "Address",
+      "City",
+      "Zip"};
+
+Obviously the columns of each row should then have some meaningful data (these can be fictitious).
+
+Write an application (or Applet) that uses the class javax.swing.JTable to display the array in a frame (or Applet) such that the user can make edits to it. You may find the Swing tutorial on JTable quite helpful. Obviously, you should use Eclipse rather than JavaWebStart so it is the code that is helpful here. If you do not want to use these column names, you may be as creative here as you desire for the contents of the table but you need a table of at least the specified size in rows and columns.

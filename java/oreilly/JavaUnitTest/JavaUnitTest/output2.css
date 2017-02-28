@@ -1,0 +1,141 @@
+#container
+{
+	margin: 0 auto;
+	width: 100%;
+	
+	background: #AAA url(/layout-two-liquid-background.gif) repeat-y 68% 0 ;
+}
+
+#header
+{
+	background:lightgray;
+	padding: 20px;
+}
+
+#header h1 { margin: 0;
+			color:black;
+			text-align:left;
+    		font-style:italic;
+			font-size:2.5em;
+			 }
+table{
+	width:80%;
+	text-align:left;
+	vertical-align:bottom;
+}
+td{
+	padding:0px;
+	height:20px;
+}
+#navigation
+{
+	float: left;
+	width: 100%;
+	padding:10px;
+	background:gray;
+}
+/
+#content-container
+{
+	float: left;
+	width: 100%;
+	border:2px solid black;
+	
+}
+
+#content 
+{
+	clear: left;
+	float: left;
+	
+	width: 60%;
+	padding: 10px 0;
+	margin: 0 0 0 4%;
+	
+	display: inline;
+}
+#occuEdu{
+	float:left;
+	width:100%;
+	
+}
+h3{
+	color:black;
+	font-size:1.5em;
+	font-style:italic;
+	
+}
+h6{
+	color:#111;
+	font-size:1.2em;
+	font-style:italic;
+}
+h2{
+	color:darkgray;
+	font-style:italic;
+	font-size:.8em;
+	margin-left:5%;
+	
+	
+}
+h4{
+	color:gray;
+	font-style:italic;
+	font-size:.8em;
+}
+h5{
+	color:black;
+	font-style:italic;
+	font-size:1.0em;
+}
+
+#content h2 { margin: 0; 
+			color:gray;
+        	font-style:bold;
+			}
+
+
+#aside 
+{
+	float: right;
+	width: 30%;
+	height=120%;
+	margin-right:0px;
+	
+	
+	
+	display: inline;
+}
+#asideContent{
+		float:left;
+		width:80%;
+		text-align:left;
+		padding:10px 0;
+		margin-top:auto;
+		margin-bottom:auto;
+		
+		font-size:.8em;
+		vertical-align:top;
+		
+}
+#values{
+	border:2px solid black;
+	float:right;
+	margin:0 3% 0 0;
+	 display:inline;
+}
+#values h3{
+		margin:20%;
+		color:black;
+		font-size:1.1em;
+}
+
+#aside h3 { margin: 0; }
+
+#footer
+{
+	clear: left;
+	background: #ccc;
+	text-align: right;
+	padding: 5px;
+	height: 1%;

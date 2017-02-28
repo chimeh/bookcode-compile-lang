@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <title> Quiz </title>
+ <meta charset="utf-8">
+ <style>
+ .basic {
+  font-family: Helvetica, Verdana, sans-serif;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+ }
+ .red {
+  background-color: red;
+  border: 2px dotted black;
+ }
+ </style>
+ <script>
+ window.onload = init;
+ 
+ function init() {
+  div = document.querySelector(".basic");
+  div.onclick = addRed;
+ }
+ 
+ function addRed() {
+  // Retrieving any elements with the basic class name assigned
+  var div = document.querySelector(".basic");
+  // Retreiving the current attributes assigned to the "basic" class elements and appending a red value
+  var attributes = div.getAttribute("class") + " red";
+  // Assigning the values to the class attribute
+  div.setAttribute("class", attributes);
+ }
+ </script>
+</head>
+<body>
+ <div class="basic">
+  Click to make me red!
+ </div>  
+</body>
+</html>

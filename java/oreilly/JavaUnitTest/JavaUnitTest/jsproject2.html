@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calling Card</title>
+<link rel="stylesheet" type="text/css" href="jsproject.css">
+<script type="text/javascript">
+<!--
+
+   
+function fNameFocus(){
+	document.getElementById('firstName').focus();
+}
+function openWindow(){
+		window.open("about:blank","test","width=900");
+
+	
+}
+function checkCreateText(outWnd){
+	
+	//form elements
+	var fName=document.getElementById('firstName').value;
+    var lName=document.getElementById('lastName').value;
+    var address=document.getElementById('address').value;
+    var city=document.getElementById('city').value;
+    var zip=document.getElementById('zip').value;
+    var country=document.getElementById('country').value;
+    var occupation=document.getElementById('occupation').value;
+    var education=document.getElementById('education').value;
+    var hobbies=document.getElementById('hobbies').value;
+	
+	//create some text nodes
+    var name=outWnd.document.createTextNode(fName+" "+lName);
+    var address=outWnd.document.createTextNode(address+" "+city+" "+zip+" "+country);
+	var occupation=outWnd.document.createTextNode(occupation);
+    var education=outWnd.document.createTextNode(education);
+    var hobbies=outWnd.document.createTextNode(hobbies);
+	//append nodes to the template
+    outWnd.document.getElementById('name').appendChild(name);
+    outWnd.document.getElementById('address').appendChild(address);
+	outWnd.document.getElementById('occupation').appendChild(occupation);
+    outWnd.document.getElementById('education').appendChild(education);
+    outWnd.document.getElementById('hobbies').appendChild(hobbies);
+	outWnd.document.getElementById('tableOccupation').height='10';
+	outWnd.document.getElementById('tableEducation').height='10';
+
+	
+}
+    
+function validate(){
+    var f =document.forms[0];
+    var fName=document.getElementById('firstName');
+    var lName=document.getElementById('lastName');
+    var address=document.getElementById('address');
+    var city=document.getElementById('city');
+    var zip=document.getElementById('zip');
+    var country=document.getElementById('country');
+    var occupation=document.getElementById('occupation');
+    var education=document.getElementById('education');
+    var hobbies=document.getElementById('hobbies');
+	//test only
+	/*
+	fName.value='David';
+	lName.value='Bethke';
+	address.value='8009 Fierro Cove';
+	city.value='Austin';
+	zip.value='78729';
+	country.value='USA';
+	occupation.value='Engineer';
+	education.value='High School';
+	hobbies.value='Motorbikes, Computers, Reading, Traveling, and Finding a Job!';
+	*/
+	
+    //check empty
+	var allPass=false;
+    for(var i=0; i < document.forms[0].elements.length; i++){
+       (! checkEmpty(f.elements[i],'Check Empty '+ f.elements[i].name))?emPass=false:emPass=true;       
+    }
+	//check other stuff
+    (!checkLettersOnly(fName,'First Name letters only'))?flPass=false:flPass=true;
+    (!checkLettersOnly(lName,'Last Name letters only'))?llPass=false:llPass=true;
+    (!checkAlphaNumeric(address,'Address letters/numbers only'))?adPass=false:adPass=true;
+    (!checkLettersOnly(city,'City letters only'))?ciPass=false:ciPass=true;
+    (!checkNumbersOnly(zip,'Zip numbers Only'))?ziPass=false:ziPass=true;
+    (!checkLength(zip,5,5,'Zip must be 5 numbers'))?zilPass=false:zilPass=true;
+    (!checkSelection(country,'Select Your Country','Pick A Country from the List'))?coPass=false:coPass=true;
+    (!checkLettersOnly(occupation,'Occupation letters only'))?ocPass=false:ocPass=true;
+    (!checkSelection(education,'Enter Highest Education','Pick education from the List'))?edPass=false:edPass=true;
+    (!checkLength(hobbies,1,200,'Max 200 chars'))?hoPass=false:hoPass=true;
+	allPass= emPass&&flPass&&llPass&&adPass&&ciPass&&ziPass&&zilPass&&coPass&&ocPass&&edPass&&hoPass;
+	
+	if (allPass) {
+		outputResults();
+	}
+    return false;  
+}
+function outputResults(){
+    outputWindow= window.open("output2.html","Personal Calling Card","width=600, height=550,scrollbars=0,toolbar=0,resizeable=0,menubar=0,location=0");
+    setTimeout("checkCreateText(outputWindow)",1000);
+	
+}
+
+function checkEmpty(element,message){
+    if(element.value.length == 0){
+        return showAlert(element,message);		
+    }
+    return true;
+}
+
+function checkNumbersOnly(element,message){
+    var numericExpression= /^[0-9]+$/;
+    if(element.value.match(numericExpression)){
+        return true;
+    }else{
+       return showAlert(element,message);        
+    }
+}
+function checkLettersOnly(element,message){
+    var letterExpression =/^[a-zA-Z]+$/;
+    if(element.value.match(letterExpression)){
+        return true;
+    }else{
+        return showAlert(element,message);
+    }
+}
+function checkLength(element,minVal, maxVal,message){
+    if(element.value.length >= minVal && element.value.length <= maxVal){
+        return true;
+    }else{
+        return showAlert(element,message);
+    }
+}
+function checkEmail(element,message){
+    var validExpression=/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-Z0-9]{2,4}$/;
+    if(element.value.match(validExpression)){
+        return true;
+    }else{
+        return showAlert(element,message);
+    }
+}
+function checkSelection(element,badMatch,message){
+    
+    if(element.value==badMatch){
+        return showAlert(element,message);
+    }else{
+        return true;
+    }
+}
+function checkAlphaNumeric(element,message){
+    var alphaNumeric=/^[0-9a-zA-Z\s]+$/;
+    if(element.value.match(alphaNumeric)){
+        return true;
+    }else{
+        return showAlert(element,message);
+    }
+}
+
+function showAlert(element,message){
+    alert(message);
+    element.focus();
+    return false;
+}
+//-->
+</script>
+</head><body onload="fNameFocus();">
+	<div id="container">
+	<div id="header">
+		<h1>
+			Personal Calling Cards
+		</h1>
+	</div>
+	<div id="navigation">
+		<h3>Publish Yourself to the World!</h3>
+	</div>
+	<div id="content-container">
+		<div id="content">
+			<h2>
+				Fill Out the Form Completely
+			</h2>
+			<form name="form1" method="get" onsubmit="return validate();">
+		<div class="formBorder">
+        	First name:<input id="firstName" name="firstName" size="20" type="text"><br>
+        	Last name:<input id="lastName" name="lastName" size="20" type="text"><br>
+        	Street Address:<input id="address" name="address" size="30" type="text"><br>
+        	City:<input id="city" name="city" size="20" type="text"><br>
+        	Zip:<input id="zip" name="zip" size="5" type="text"><br>
+        	Country:<select id="country" name="country">
+            	<option selected="selected">Select Your Country</option>
+            	<option>USA</option>
+            	<option>UK</option>
+            	<option>Canada</option>
+            	<option>Mexico</option>
+        	</select><br>
+        	Occupation:<input id="occupation" name="occupation" size="30" type="text"><br>
+        	Education Level:<select id="education" name="education">
+            	<option selected="selected">Enter Highest Education</option>
+            	<option>High School</option>
+            	<option>Some College</option>
+            	<option>College Degree (2yr)</option>
+            	<option>College Degree (4yr)</option>
+            	<option>Graduate School</option>
+            	<option>Post Graduate School</option>
+        	</select>
+        	<p>Hobbies:(max length 200 chars)</p>
+        		<textarea id="hobbies" name="hobbies" rows="10" cols="40"></textarea>
+        		<input value="Create Your Calling Card" type="submit">
+		</div>
+		</form></div>
+		<div id="aside">	
+			<h2>Calling Cards</h2>
+			<p>Fill out your information on the left to create your Personal Calling Card</p>
+			<p>Use them for your Family, Friends, Business Associates. Be your own Facebook.			</p>
+			<p> Hand them out at</p>
+			<ul>
+				<li type="square">Parties</li>
+				<li type="square">Business Meeings</li>
+				<li type="square">Family Get Togethers</li>
+				<li type="square">At the Beach!</li>
+			</ul>
+		</div>
+		<div id="footer">
+			<ul><li>About Us</li><li>Contact</li><li>Careers</li><li>Calling Card Inc. &copy 2011</li></ul>
+		</div>
+	</div>
+</div>
+
+</body></html>

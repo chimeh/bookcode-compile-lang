@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <title>Pet Objects and Methods</title>
+ <meta charset="utf-8">
+ <script>
+ window.onload = init;
+ 
+ function Pet(type, name, weight, likes, sound) {
+  this.type = type;
+  this.name = name;
+  this.weight = weight;
+  this.likes = likes;
+  this.sound = sound;
+  
+  // Declaring a getLikes() method to retrieve the individual string values in the likes[] array
+  this.getLikes = function(){
+    // Declaring a variable to use for concatenation of the string stored in the likes[] array
+    var likesString = "";
+    
+    // Iterating through the values in the likes array
+    for(var i = 0; i < this.likes.length; i++){
+      // Adding condition to use commas when separating values unless we are at the last value in the array, 
+      // unless we are at the last value. Which in that case we add the word 'and' and a period.
+      if(i < this.likes.length - 1){
+        likesString += this.likes[i] + ", ";
+      }
+      else{
+        likesString += "and " + this.likes[i] + ".";
+      }
+    }
+    
+    return likesString;  
+  };
+ 
+  this.speak = function(howMany) {
+  var says = "";
+    for (var i = 0; i < howMany; i++) {
+     says += this.sound + " ";
+    }
+  return says;
+  
+  }
+  
+ } 
+
+ function init() {
+  // Creating a new Pet object named Willie
+  var willie = new Pet("Dog", "Willie", 10, ["slobbering", "panting", "eating"], "Bark!");
+  
+  // Retrieving a div in order to output values to the browser.
+  var div = document.getElementById("pets");
+  
+  // Outputting the sentence to the browser.
+  div.innerHTML = willie.name + " likes " + willie.getLikes();
+ 
+ }
+   
+ </script>
+</head>
+<body>
+ <div id="pets">
+ </div> 
+</body>
+</html> 

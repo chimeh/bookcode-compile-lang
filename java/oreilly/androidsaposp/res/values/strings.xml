@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yamba</string>
+    <string name="titleStatus">Status View</string>
+    <string name="buttonUpdate">Update</string>
+    <string name="counterText">0</string>
+    <string name="editContent">Coloque sua frase</string>
+    <string name="usernamePref">username</string>
+    <string name="titleUsernamePref">Username</string>
+    <string name="passwordPref">password</string>
+    <string name="titlePasswordPref">Password</string>
+    <string name="APIPref">API</string>
+    <string name="APITitlePref">API</string>
+    <string name="titlePrefs">Preferências</string>
+    <string name="screenPref">Preference Screen</string>
+    <string name="usernameSummary">Username aqui</string>
+    <string name="passwordSummary">Password aqui</string>
+    <string name="APISummary">API aqui</string>
+    <string name="teste">teste</string>
+
+</resources>

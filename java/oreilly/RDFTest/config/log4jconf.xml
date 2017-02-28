@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd"> 
+<log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="LogFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<!-- Name der Log Datei -->
+		<param name="File" value="./logging/client.log" />
+		<!-- Jeden Tag um 0:00 Uhr alte Datei umbenennen und neue starten -->
+		<param name="DatePattern" value="'.'dd.MM.yyyy" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm,SSS}  %p %t %c - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- Debug Appender auf Konsole -->
+	<appender name="KonsoleDebug" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- Datum Prio [Thread] [Kategorie (letzten 2) Klasse (Datei:Zeile) - Meldung] -->
+			<param name="ConversionPattern" value="[%t] (%F:%L) - %m%n"/>
+		</layout>
+	</appender>
+
+	<category name="client" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="KonsoleDebug" />
+	</category>
+	<root>
+		<priority value ="debug" />
+		<!-- In Produktion Konsole verwenden -->
+		<!--  <appender-ref ref="LogFile" /> -->
+		<appender-ref ref="KonsoleDebug" />
+	</root>
+</log4j:configuration>

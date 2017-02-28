@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Stock Chart over WebSocket</title>
+        
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <style>
+            h3 { display: inline; }
+            .evolution { font-size: 14pt; }
+        </style>
+    </head>
+    <body lang="en">
+        <div class="vertical-center">
+            <div class="container">
+                <h1>Stock Chart over WebSocket</h1>
+                <table class="table" id="stockTable">
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Price</th>
+                            <th>Evolution</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stockRows">
+                        <tr>
+                            <td><h3>AAPL</h3></td>
+                            <td id="AAPL">
+                                <h3><span class="label label-default">95.00</span></h3>
+                            </td>
+                            <td id="AAPL_e">
+                                <span class="evolution"><i class="fa" aria-hidden="true"></i></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><h3>MSFT</h3></td>
+                            <td id="MSFT">
+                                <h3><span class="label label-default">50.00</span></h3>
+                            </td>
+                            <td id="MSFT_e">
+                                <span class="evolution"><i class="fa" aria-hidden="true"></i></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><h3>AMZN</h3></td>
+                            <td id="AMZN">
+                                <h3><span class="label label-default">300.00</span></h3>
+                            </td>
+                            <td id="AMZN_e">
+                                <span class="evolution"><i class="fa" aria-hidden="true"></i></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><h3>GOOG</h3></td>
+                            <td id="GOOG">
+                                <h3><span class="label label-default">550.00</span></h3>
+                            </td>
+                            <td id="GOOG_e">
+                                <span class="evolution"><i class="fa" aria-hidden="true"></i></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><h3>YHOO</h3></td>
+                            <td id="YHOO">
+                                <h3><span class="label label-default">35.00</span></h3>
+                            </td>
+                            <td id="YHOO_e">
+                                <span class="evolution"><i class="fa" aria-hidden="true"></i></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="js/stock.js"></script>
+    </body>
+</html>    

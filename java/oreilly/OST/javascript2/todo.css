@@ -1,0 +1,39 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+legend {
+  font-weight: bold;
+}
+div.tableContainer {
+  display: table;
+  border-spacing: 5px;
+}
+div.tableRow {
+  display: table-row;
+}
+div.tableRow label {
+  display: table-cell;
+  text-align: right;
+}
+div.tableRow input {
+  display: table-cell;
+}
+ul#todoList {
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+ul#todoList li {
+    padding: 5px;
+    margin: 5px;
+    background-color: #ededed;
+    border: 2px inset #ededed;
+}
+ul#todoList li span.notDone {
+    margin-right: 10px;
+    background-color: #FF9999;
+}
+ul#todoList li span.done {
+    margin-right: 10px;
+    background-color: #80CC80;
+}

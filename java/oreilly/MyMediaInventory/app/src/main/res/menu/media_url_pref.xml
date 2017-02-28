@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    
+       <item
+        android:id="@+id/mi_new_url"
+        android:orderInCategory="100"
+        android:title="@string/new_url_item"/>
+</menu>

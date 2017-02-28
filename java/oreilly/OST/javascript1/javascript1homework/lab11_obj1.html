@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title> Lab 10, Objective 1 </title>
+  <meta charset="utf-8">
+  <script>
+    // Running the init function once the page loads, this function contains all the code needed to print movie objects to the screen
+    window.onload = init;
+    
+    // Declaring the constructor for a Movie object. This holds any details in relation to a particular movie that is playing.
+    
+    function Movie(title, year, genre, rating, showtimes){
+      this.title = title;
+      this.year = year;
+      this.genre = genre;
+      this.rating = rating;
+      this.showtimes = showtimes;
+      
+      this.updateRating = function(updatedRating){
+        this.rating = updatedRating;
+      }
+      
+    }
+    
+    // Function that is supposed to run once the page loads.
+    function init(){
+    
+      // Creating 3 Movie objects along with the associated details. This way I can access any one of their properties with ease and less typing is
+      // involved then if I used the literal method.
+      
+      var movie_1 = new Movie("Jaws", 1975, "Horror", 4, ["3:30pm", "5:00pm", "10:30pm"]);
+      var movie_2 = new Movie("Pulp Fiction", 1994, "Drama", 5, ["12:30pm", "3:00pm", "5:30pm"]);
+      var movie_3 = new Movie("The Matrix", 1999, "Sci-Fi", 4, ["10:30am", "12:30pm", "3:30pm"]);
+      
+      // Updating the rating of the movie_2 object using the updateRating() method. Rating was 5 originally, changing to 4;
+      movie_2.updateRating(4);
+      
+      // Storing the three movies in an array so I can easily retrieve their properties using an iterator
+      var movieArray = [movie_1, movie_2, movie_3];
+      
+      // Retrieving the element object for the div and assigning it to a variable so I can easily access its methods
+      var div = document.getElementById("movies");
+      
+      // Iterating through the movieArray in order to print out each Movie objects details
+      for(var i = 0; i < movieArray.length; i++){
+        // Assigning each Movie object to a new variable so we do not have to type the index number each time when accessing properties.
+        var movie = movieArray[i];
+          
+          // Appending the movies div innerHTML with each movies details as the iterator runs through each object
+          div.innerHTML +=
+            "Movie: " + movie.title + "<br>" +
+            "Year: " + movie.year + "<br>" +
+            "Genre: " + movie.genre + "<br>" +
+            "Rating: " + movie.rating + "<br>" +
+            "Showtimes: ";
+          // Created a second iterator so we can retrieve the showtimes which are stored in an array.
+          for(var j = 0; j < movie.showtimes.length; j++){
+            // If we are at the end of the showtimes array, then create two line breaks so there is space between each movie objects details,
+            // otherwise put a comma in between each showtime.
+            if(j == movie.showtimes.length - 1){
+              div.innerHTML += movie.showtimes[j] + "<br><br>";
+            }
+            else {
+              div.innerHTML += movie.showtimes[j] + ",";
+            }
+          }     
+          
+     }
+     
+    }
+    
+  </script>
+</head>
+<body>
+  <div id="movies">
+  </div>
+</body>
+</html>

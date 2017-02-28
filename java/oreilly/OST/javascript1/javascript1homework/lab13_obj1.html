@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <title> Favorite Colors </title>
+ <meta charset="utf-8">
+ <script>
+   window.onload = init;
+   
+   function init(){
+     var submitButton = document.getElementById("submitButton");
+     submitButton.onclick = chooseColor;
+   }
+   
+   function chooseColor(){
+     var theForm = document.forms.theForm;
+     var colorArray = theForm.elements.color;
+     var results = document.getElementById("results");
+     
+     for(var i=0; i < colorArray.length; i++){
+       if(colorArray[i].checked){
+         results.innerHTML = "Favorite color: " + colorArray[i].value;
+       }
+     }
+     
+    }
+           
+ </script>
+ </head>
+<body>
+ <h1>Color Chooser</h1>
+ <form id="theForm">
+ <p>Choose your favorite color: </p>
+ <input type="radio" id="blue" name="color" value="blue">
+ <label for="blue">Blue</label>
+ <input type="radio" id="red" name="color" value="red">
+ <label for="red">Red</label>
+ <input type="radio" id="green" name="color" value="green">
+ <label for="green">green</label>
+ <br><br>
+ <input type="button" id="submitButton" value="Go!"><br>
+ </form> 
+ <h1>Results</h1> 
+ <div id="results">
+ </div>
+</body>
+</html> 

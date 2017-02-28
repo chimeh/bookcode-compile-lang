@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item format="reference" type="layout" name="master_fragment">@layout/fragment_container</item>
+    
+</resources>

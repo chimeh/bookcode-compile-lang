@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical">
+    
+    <ProgressBar
+       android:id="@+id/progressBar1"
+       style="?android:attr/progressBarStyleHorizontal"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="left"
+       android:layout_alignParentTop="true" />
+       
+    <TableLayout
+       android:id="@+id/tlayout1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/progressBar1"
+       android:layout_marginTop="@dimen/fragment_vertical_margin" >
+
+       <TableRow
+           android:id="@+id/tableRow1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" >
+	   
+       <Button
+	        android:id="@+id/buttonGo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="@dimen/fragment_horizontal_margin"
+	        android:text="@string/go_label" />
+    
+	    <Button
+	        android:id="@+id/buttonReload"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/reload_label" />
+       
+       </TableRow>
+
+       <TableRow
+           android:id="@+id/tableRow2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" >
+    
+		    <Button
+		        android:id="@+id/buttonForward"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/forward_label" />
+    
+    
+		   <Button
+		        android:id="@+id/buttonBackward"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/backward_label" />
+       </TableRow>
+
+       <TableRow
+           android:id="@+id/tableRow3"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" >
+	
+           <TextView
+	        android:id="@+id/textViewURL"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="right"
+	        android:layout_marginRight="@dimen/fragment_horizontal_margin"
+	        android:textSize="@dimen/url_font_size" />
+
+           </TableRow>
+   </TableLayout>
+
+   <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tlayout1" />
+     
+</RelativeLayout>

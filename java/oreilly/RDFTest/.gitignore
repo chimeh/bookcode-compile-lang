@@ -1,0 +1,17 @@
+# Generated Files #
+bin/
+target/
+*.class
+
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+
+# IDE Files #
+/.idea/
+.classpath
+.project
+.settings/

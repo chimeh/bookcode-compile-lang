@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>LearningJava</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/at/markusegger/Learning/FileIO/File2.txt</name>
+			<type>1</type>
+			<location>C:/Users/MarkusME/workspace/LearningJava/src/at/markusegger/Learning/FileIO/File2.txt</location>
+		</link>
+		<link>
+			<name>src/at/markusegger/Learning/FileIO/File3.txt</name>
+			<type>1</type>
+			<location>C:/Users/MarkusME/workspace/LearningJava/src/at/markusegger/Learning/FileIO/File3.txt</location>
+		</link>
+		<link>
+			<name>src/at/markusegger/Learning/FileIO/Java_dec.png</name>
+			<type>1</type>
+			<location>C:/Users/MarkusME/workspace/LearningJava/src/at/markusegger/Learning/FileIO/Java_dec.png</location>
+		</link>
+		<link>
+			<name>src/at/markusegger/Learning/FileIO/Java_enc.png</name>
+			<type>1</type>
+			<location>C:/Users/MarkusME/workspace/LearningJava/src/at/markusegger/Learning/FileIO/Java_enc.png</location>
+		</link>
+		<link>
+			<name>src/at/markusegger/Learning/FileIO/Java_orig.png</name>
+			<type>1</type>
+			<location>C:/Users/MarkusME/workspace/LearningJava/src/at/markusegger/Learning/FileIO/Java_orig.png</location>
+		</link>
+	</linkedResources>
+</projectDescription>

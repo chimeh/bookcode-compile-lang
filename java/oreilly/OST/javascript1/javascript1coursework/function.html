@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title> Multiple Functions </title>
+  <meta charset="utf-8">
+  <script>
+    window.onload = init;
+    
+    function init(){
+      var button = document.getElementById("submit");
+      button.onclick = getSentence;
+    }
+    
+    function getSentence(){
+      var sentenceInput = document.getElementById("sentence");
+      var sentence = sentenceInput.value;
+      if(sentence == null || sentence == ""){
+        alert("Please enter some words!");
+      }
+      else {
+        var howManyWords = countWords(sentence);
+        alert(howManyWords + " words in the sentence.");
+      }
+    }
+    function countWords(sentence){
+      var words = sentence.split(" ");
+      var numWords = words.length;
+      return numWords;
+    }
+    
+  </script>
+</head>
+<body>
+
+  <form>
+    <label for="sentence">Enter a sentence: </label>
+    <input type="text" id="sentence" size="20" value=""><br>
+    <input type="button" id="submit" value="Get the number of words!">
+  </form>
+  
+</body>
+</html>

@@ -1,0 +1,521 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- Model Version -->
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Artifact Information -->
+  <groupId>org.jboss.ejb3.examples</groupId>
+  <artifactId>jboss-ejb3-examples-tomee17-build</artifactId>
+  <name>Build System and Parent for Tomee EJB3 Examples adapted</name>
+  <version>1.1.0-SNAPSHOT</version>
+  <description>Build System and Parent for JBoss EJB3 Examples to accompany O'Reilly "Enterprise JavaBeans 6th Edition"</description>
+  <packaging>pom</packaging>
+
+  <!-- Properties -->
+  <properties>
+
+    <!-- Versioning -->
+
+    <!--<version.junit_junit>4.7</version.junit_junit>-->
+    <!--<version.org.jboss.as.7>7.0.1.Final</version.org.jboss.as.7>-->
+    <!--<version.org.jboss.shrinkwrap>1.0.0-beta-4</version.org.jboss.shrinkwrap>-->
+    <!--<version.org.jboss.ejb3_jboss.ejb3.api>3.1.0-Alpha1</version.org.jboss.ejb3_jboss.ejb3.api>-->
+    <!--<version.org.jboss.ejb3_jboss.ejb3.ext.api>1.0.0</version.org.jboss.ejb3_jboss.ejb3.ext.api>-->
+    <!--<version.org.jboss.javaee_jboss-jms-api>1.1.0.GA</version.org.jboss.javaee_jboss-jms-api>-->
+    <!--<version.org.jboss.logging_jboss.logging.log4j>2.0.6.GA</version.org.jboss.logging_jboss.logging.log4j>-->
+    <!--<version.org.jboss.logging_jboss.logging.spi>2.0.5.GA</version.org.jboss.logging_jboss.logging.spi>-->
+    <!--<version.org.jboss.arquillian>1.0.0.CR4</version.org.jboss.arquillian>-->
+    <!--<version.org.jboss.arquillian.container.openejb>1.0.0.Alpha5</version.org.jboss.arquillian.container.openejb>-->
+    <!--<version.org.jboss.arquillian.container.gfv3>1.0.0.CR1</version.org.jboss.arquillian.container.gfv3>-->
+    <!--<version.org.glassfish>3.0.1-b18</version.org.glassfish>-->
+    <!--<version.org.apache.openejb>3.1.4</version.org.apache.openejb>-->
+    <!--<version.org.jboss.spec.javax.ejb>1.0.0.Beta2</version.org.jboss.spec.javax.ejb>-->
+    <!--<version.javax_javaee.api>6.0</version.javax_javaee.api>-->
+    <!--<version.javax.inject_javax.inject>1</version.javax.inject_javax.inject>-->
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Tomee version-->
+    <tomee.version>1.7.1</tomee.version>
+    <version.shrinkwrap.resolver>2.0.0</version.shrinkwrap.resolver>
+    <version.openejb>4.7.1</version.openejb>
+    <!-- other plugin versions -->
+    <version.compiler.plugin>3.1</version.compiler.plugin>
+    <version.surefire.plugin>2.17</version.surefire.plugin>
+    <version.war.plugin>2.1.1</version.war.plugin>
+    <!-- maven-compiler-plugin -->
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
+
+  </properties>
+
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>org.apache.openejb</groupId>
+        <artifactId>javaee-api</artifactId>
+        <version>6.0-6</version>
+        <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.0.1</version>
+        <scope>provided</scope>
+      </dependency>
+
+
+      <dependency>
+        <groupId>org.apache.openejb</groupId>
+        <artifactId>openejb-core</artifactId>
+        <version>${version.openejb}</version>
+        <scope>test</scope>
+      </dependency>
+
+
+      <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>2.4</version>
+      </dependency>
+      <!-- Test related depedencies -->
+      <!-- JUNIT -->
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.11</version>
+        <scope>test</scope>
+      </dependency>
+      <!-- ARQUILIAN AND SRINKWRAP -->
+      <dependency>
+        <groupId>org.jboss.shrinkwrap.resolver</groupId>
+        <artifactId>shrinkwrap-resolver-bom</artifactId>
+        <version>${version.shrinkwrap.resolver}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <!-- Now pull in our server-based unit testing framework -->
+      <dependency>
+        <groupId>org.jboss.arquillian</groupId>
+        <artifactId>arquillian-bom</artifactId>
+        <version>1.1.5.Final</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <!-- TOMEE SPECIFICS For Arquilian -->
+
+      <!-- Override dependency resolver with test version. This must go *BEFORE*
+   the Arquillian BOM. -->
+
+      <dependency>
+        <groupId>org.apache.openejb</groupId>
+        <artifactId>ziplock</artifactId>
+        <version>${tomee.version}</version>
+        <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.openejb</groupId>
+        <artifactId>arquillian-tomee-embedded</artifactId>
+        <version>${tomee.version}</version> <!--Current version-->
+      </dependency>
+      <dependency>
+        <groupId>org.apache.openejb</groupId>
+        <artifactId>tomee-embedded</artifactId>
+        <version>${tomee.version}</version>
+      </dependency>
+      <!--Required for WebServices and RESTful WebServices-->
+      <dependency>
+        <groupId>org.apache.openejb</groupId>
+        <artifactId>tomee-webservices</artifactId>
+        <version>${tomee.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.openejb</groupId>
+        <artifactId>tomee-jaxrs</artifactId>
+        <version>${tomee.version}</version>
+      </dependency>
+
+
+      <!--<dependency>-->
+      <!--<groupId>org.eu.ingwar.tools</groupId>-->
+      <!--<artifactId>arquillian-suite-extension</artifactId>-->
+      <!--<version>1.1.2</version>-->
+      <!--<scope>test</scope>-->
+      <!--</dependency>-->
+
+
+    </dependencies>
+  </dependencyManagement>
+
+  <profiles>
+    <profile>
+      <!-- The default profile skips all tests, though you can tune it to run
+          just unit tests based on a custom pattern -->
+      <!-- Seperate profiles are provided for running all tests, including Arquillian
+          tests that execute in the specified container -->
+      <id>default</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${version.surefire.plugin}</version>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>arquillian-tomee-embedded</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.apache.openejb</groupId>
+          <artifactId>arquillian-tomee-embedded</artifactId>
+          <version>${tomee.version}</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>arquillian-tomee-remote</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.apache.openejb</groupId>
+          <artifactId>arquillian-tomee-remote</artifactId>
+          <version>${tomee.version}</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+
+
+  <build>
+    <!-- Set the name of the war, used as the context root when the app is
+        deployed -->
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+
+      <!-- Compiler plugin enforces Java 1.8 compatibility and activates annotation
+          processors -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${version.compiler.plugin}</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+          <showDeprecation>false</showDeprecation>
+          <showWarnings>true</showWarnings>
+          <optimize>true</optimize>
+
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+
+  <!-- Build Configuration -->
+  <!--<build>-->
+
+    <!--<plugins>-->
+
+      <!--&lt;!&ndash; Compiler &ndash;&gt;-->
+      <!--<plugin>-->
+        <!--<artifactId>maven-compiler-plugin</artifactId>-->
+        <!--<version>2.3.2</version>-->
+        <!--<inherited>true</inherited>-->
+        <!--<configuration>-->
+          <!--<source>1.6</source>-->
+          <!--<target>1.6</target>-->
+          <!--<showDeprecation>false</showDeprecation>-->
+          <!--<showWarnings>true</showWarnings>-->
+          <!--<optimize>true</optimize>-->
+          <!--<compilerVersion>1.6</compilerVersion>-->
+          <!--<fork>true</fork>-->
+          <!--<executable>${JAVA_HOME}/bin/javac</executable>-->
+          <!--<encoding>UTF-8</encoding>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+
+      <!--&lt;!&ndash; Surefire (Tests) Plugin &ndash;&gt;-->
+      <!--<plugin>-->
+        <!--<artifactId>maven-surefire-plugin</artifactId>-->
+        <!--<version>2.7.1</version>&lt;!&ndash;$NO-MVN-MAN-VER$&ndash;&gt; &lt;!&ndash; Comment required to suppress m23 warning &ndash;&gt;-->
+        <!--<configuration>-->
+          <!--<redirectTestOutputToFile>true</redirectTestOutputToFile>-->
+          <!--<printSummary>true</printSummary>-->
+          <!--<includes>-->
+            <!--<include>**/*UnitTestCase.java</include>-->
+          <!--</includes>-->
+          <!--<forkMode>always</forkMode>-->
+          <!--<argLine>-ea</argLine>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+
+      <!--&lt;!&ndash; Enforce Maven Environment &ndash;&gt;-->
+      <!--<plugin>-->
+        <!--<artifactId>maven-enforcer-plugin</artifactId>-->
+        <!--<version>1.0-beta-1</version>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<id>enforce-maven-environment</id>-->
+            <!--<goals>-->
+              <!--<goal>enforce</goal>-->
+            <!--</goals>-->
+          <!--</execution>-->
+        <!--</executions>-->
+        <!--<configuration>-->
+          <!--<rules>-->
+            <!--<requireMavenVersion>-->
+              <!--<version>[2.0.9,)</version> &lt;!&ndash; Must be Maven 2.0.9 &ndash;&gt;-->
+            <!--</requireMavenVersion>-->
+            <!--<requireJavaVersion>-->
+              <!--<version>1.6.0</version> &lt;!&ndash; Must be JDK6 &ndash;&gt;-->
+            <!--</requireJavaVersion>-->
+          <!--</rules>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+
+    <!--</plugins>-->
+
+    <!--<pluginManagement>-->
+      <!--<plugins>-->
+        <!--<plugin>-->
+          <!--<artifactId>maven-surefire-plugin</artifactId>-->
+          <!--<version>2.6</version>-->
+        <!--</plugin>-->
+        <!--&lt;!&ndash; So m2e doesn't throw errors for features it doesn't support in the POM &ndash;&gt;-->
+        <!--<plugin>-->
+          <!--<groupId>org.eclipse.m2e</groupId>-->
+          <!--<artifactId>lifecycle-mapping</artifactId>-->
+          <!--<version>1.0.0</version>-->
+          <!--<configuration>-->
+            <!--<lifecycleMappingMetadata>-->
+              <!--<pluginExecutions>-->
+                <!--<pluginExecution>-->
+                  <!--<pluginExecutionFilter>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-dependency-plugin</artifactId>-->
+                    <!--<versionRange>[1.0.0,)</versionRange>-->
+                    <!--<goals>-->
+                      <!--<goal>unpack</goal>-->
+                    <!--</goals>-->
+                  <!--</pluginExecutionFilter>-->
+                  <!--<action>-->
+                    <!--<execute />-->
+                  <!--</action>-->
+                <!--</pluginExecution>-->
+                <!--<pluginExecution>-->
+                  <!--<pluginExecutionFilter>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-dependency-plugin</artifactId>-->
+                    <!--<versionRange>[1.0.0,)</versionRange>-->
+                    <!--<goals>-->
+                      <!--<goal>copy-dependencies</goal>-->
+                    <!--</goals>-->
+                  <!--</pluginExecutionFilter>-->
+                  <!--<action>-->
+                    <!--<execute />-->
+                  <!--</action>-->
+                <!--</pluginExecution>-->
+                <!--<pluginExecution>-->
+                  <!--<pluginExecutionFilter>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-enforcer-plugin</artifactId>-->
+                    <!--<versionRange>[1.0.0,)</versionRange>-->
+                    <!--<goals>-->
+                      <!--<goal>enforce</goal>-->
+                    <!--</goals>-->
+                  <!--</pluginExecutionFilter>-->
+                  <!--<action>-->
+                    <!--<execute />-->
+                  <!--</action>-->
+                <!--</pluginExecution>-->
+              <!--</pluginExecutions>-->
+            <!--</lifecycleMappingMetadata>-->
+          <!--</configuration>-->
+        <!--</plugin>-->
+      <!--</plugins>-->
+    <!--</pluginManagement>-->
+
+  <!--</build>-->
+
+  <!--&lt;!&ndash; Dependency Versioning &ndash;&gt;-->
+  <!--<dependencyManagement>-->
+
+    <!--<dependencies>-->
+
+      <!--<dependency>-->
+        <!--<groupId>junit</groupId>-->
+        <!--<artifactId>junit</artifactId>-->
+        <!--<version>${version.junit_junit}</version>-->
+      <!--</dependency>-->
+
+
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.as</groupId>-->
+        <!--<artifactId>jboss-as-spec-api</artifactId>-->
+        <!--<type>pom</type>-->
+        <!--<version>${version.org.jboss.as.7}</version>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.as</groupId>-->
+        <!--<artifactId>jboss-as-dist</artifactId>-->
+        <!--<version>${version.org.jboss.as.7}</version>-->
+        <!--<type>zip</type>-->
+        <!--<scope>test</scope>-->
+      <!--</dependency>-->
+      <!--&lt;!&ndash; For getting at internals &ndash;&gt;-->
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.as</groupId>-->
+        <!--<artifactId>jboss-as-build</artifactId>-->
+        <!--<type>pom</type>-->
+        <!--<scope>test</scope>-->
+        <!--<version>${version.org.jboss.as.7}</version>-->
+      <!--</dependency>-->
+
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.shrinkwrap</groupId>-->
+        <!--<artifactId>shrinkwrap-api</artifactId>-->
+        <!--<version>${version.org.jboss.shrinkwrap}</version>-->
+        <!--<scope>test</scope>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.shrinkwrap</groupId>-->
+        <!--<artifactId>shrinkwrap-spi</artifactId>-->
+        <!--<version>${version.org.jboss.shrinkwrap}</version>-->
+        <!--<scope>test</scope>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.shrinkwrap</groupId>-->
+        <!--<artifactId>shrinkwrap-impl-base</artifactId>-->
+        <!--<version>${version.org.jboss.shrinkwrap}</version>-->
+        <!--<scope>test</scope>-->
+      <!--</dependency>-->
+
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.arquillian</groupId>-->
+        <!--<artifactId>arquillian-bom</artifactId>-->
+        <!--<type>pom</type>-->
+        <!--<version>${version.org.jboss.arquillian}</version>-->
+        <!--<scope>import</scope>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.arquillian</groupId>-->
+        <!--<artifactId>arquillian-build</artifactId>-->
+        <!--<type>pom</type>-->
+        <!--<version>${version.org.jboss.arquillian}</version>-->
+        <!--<scope>import</scope>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.arquillian.container</groupId>-->
+        <!--<artifactId>arquillian-openejb-embedded-3.1</artifactId>-->
+        <!--<version>${version.org.jboss.arquillian.container.openejb}</version>-->
+        <!--<scope>test</scope>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.arquillian.container</groupId>-->
+        <!--<artifactId>arquillian-glassfish-embedded-3.1</artifactId>-->
+        <!--<version>${version.org.jboss.arquillian.container.gfv3}</version>-->
+        <!--<scope>test</scope>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.as</groupId>-->
+        <!--<artifactId>jboss-as-arquillian-container-managed</artifactId>-->
+        <!--<scope>test</scope>-->
+        <!--<version>${version.org.jboss.as.7}</version>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+        <!--<groupId>org.jboss.arquillian.junit</groupId>-->
+        <!--<artifactId>arquillian-junit-container</artifactId>-->
+        <!--<scope>test</scope>-->
+        <!--<version>${version.org.jboss.arquillian}</version>-->
+      <!--</dependency>-->
+
+      <!--<dependency>-->
+         <!--<groupId>org.glassfish.extras</groupId>-->
+         <!--<artifactId>glassfish-embedded-all</artifactId>-->
+         <!--<version>${version.org.glassfish}</version>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+        <!--<groupId>org.glassfish.extras</groupId>-->
+        <!--<artifactId>glassfish-embedded-shell</artifactId>-->
+        <!--<version>${version.org.glassfish}</version>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+        <!--<groupId>org.glassfish.ejb</groupId>-->
+        <!--<artifactId>ejb-timer-service-app</artifactId>-->
+        <!--<version>${version.org.glassfish}</version>-->
+        <!--<type>war</type>-->
+      <!--</dependency>-->
+
+      <!--<dependency>-->
+        <!--<groupId>org.apache.openejb</groupId>-->
+        <!--<artifactId>openejb-core</artifactId>-->
+        <!--<version>${version.org.apache.openejb}</version>-->
+        <!--<scope>test</scope>-->
+      <!--</dependency>-->
+
+      <!--<dependency>-->
+        <!--<groupId>javax</groupId>-->
+        <!--<artifactId>javaee-api</artifactId>-->
+        <!--<version>${version.javax_javaee.api}</version>-->
+        <!--<scope>provided</scope>-->
+        <!--<optional>true</optional>-->
+      <!--</dependency>-->
+
+      <!--<dependency>-->
+       <!--<groupId>javax.inject</groupId>-->
+       <!--<artifactId>javax.inject</artifactId>-->
+       <!--<version>${version.javax.inject_javax.inject}</version>-->
+      <!--</dependency>-->
+
+
+    <!--</dependencies>-->
+
+  <!--</dependencyManagement>-->
+
+  <!--<repositories>-->
+    <!--<repository>-->
+      <!--<id>jboss-public-repository</id>-->
+      <!--<name>JBoss Repository</name>-->
+      <!--<url> https://repository.jboss.org/nexus/content/groups/public </url>-->
+      <!--<releases>-->
+        <!--<enabled>true</enabled>-->
+        <!--<updatePolicy>never</updatePolicy>-->
+      <!--</releases>-->
+      <!--<snapshots>-->
+        <!--<enabled>true</enabled>-->
+        <!--<updatePolicy>never</updatePolicy>-->
+      <!--</snapshots>-->
+    <!--</repository>-->
+  <!--</repositories>-->
+
+  <!--<pluginRepositories>-->
+    <!--<pluginRepository>-->
+      <!--<id>jboss-public-repository</id>-->
+      <!--<name>JBoss Repository</name>-->
+      <!--<url> https://repository.jboss.org/nexus/content/groups/public </url>-->
+      <!--<releases>-->
+        <!--<enabled>true</enabled>-->
+        <!--<updatePolicy>never</updatePolicy>-->
+      <!--</releases>-->
+      <!--<snapshots>-->
+        <!--<enabled>true</enabled>-->
+        <!--<updatePolicy>never</updatePolicy>-->
+      <!--</snapshots>-->
+    <!--</pluginRepository>-->
+  <!--</pluginRepositories>-->
+
+
+</project>

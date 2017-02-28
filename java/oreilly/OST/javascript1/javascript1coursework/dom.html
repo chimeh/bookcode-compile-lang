@@ -1,0 +1,23 @@
+<!doctype html>
+  <html lang="en">
+    <head>
+      <title> Simple DOM </title>
+      <meta charset="utf-8">
+      <script>
+        window.onload = init;
+        
+        function init(){
+          var p = document.getElementById("answer");
+          var answer = prompt("Enter your answer to life, the universe and everything: ");
+          p.innerHTML = answer;
+        }
+       </script>
+    </head>
+    <body>
+      <p id ="question">
+        What is the answer to life, the universe and everything?
+      </p>
+      <p id = "answer">
+      </p>
+    </body>
+  </html>

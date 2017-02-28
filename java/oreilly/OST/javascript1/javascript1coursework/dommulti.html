@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title> Accessing multiple elements </title>
+    <meta charset="utf-8">
+    <script>
+  	window.onload = init;
+  	
+  	function init(){
+  	  var button = document.getElementById("submit");
+  	  button.onclick = addUp;
+  	}
+  	
+  	function addUp(){
+	  var sum = 0;
+	  var inputs = document.getElementsByTagName("input");
+	  for(var i=0; i < inputs.length -1; i++){
+	    var addendString = inputs[i].value;
+	    var addend = parseInt(addendString);
+	    if(!isNaN(addend)){
+	      sum += addend;
+	    }
+	 }
+	 var span = document.getElementById("sum");
+	 span.innerHTML = sum;
+  	}
+    </script>
+  </head>
+  <body>
+    <form>
+      <p>Enter numbers to add:</p>
+      <input type="number" size="4"> + <br>
+      <input type="number" size="4"> + <br>
+      <input type="number" size="4"> + <br>
+      <p>= <span id="sum"></span></p>
+      <input type="button" id="submit" value="Add">
+    </form>
+  </body>
+</html>

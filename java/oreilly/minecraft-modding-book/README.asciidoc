@@ -1,0 +1,3 @@
+= Minecraft Modding Book
+
+If you want to see and understand how this code works, check out the book at http://shop.oreilly.com/product/0636920036562.do.

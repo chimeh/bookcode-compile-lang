@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title> My Favorite Movies, Take Two </title>
+  <meta charset="utf-8">
+  <script>
+    function Movie(title, rating, genre, description){
+      this.title = title;
+      this.rating = rating;
+      this.genre = genre;
+      this.description = description;
+      
+      this.print = function(){
+        var s = this.title + "; rated: " + this.rating + "; genre: " + this.genre +
+                "; " + this.description;
+        return s;
+      }
+    
+    }
+    
+    var movieList = [];
+    
+    window.onload = init;
+    
+    function init(){
+      var sumbitButton = document.getElementById("submitButton");
+      submitButton.onclick = getMovieData;
+    }
+    
+    function getMovieData(){
+      var titleInput = document.getElementById("title");
+      var title = titleInput.value
+      
+      var ratingInput = document.getElementById("rating");
+      var rating = parseInt(ratingInput.value);
+      
+      var genreSelect = document.getElementById("genre");
+      var genreOption = genreSelect.options[genreSelect.selectedIndex];
+      var genre = genreOption.value;
+      
+      var descriptionTextarea = document.getElementById("description");
+      var description = descriptionTextarea.value;
+      
+      if(title == null || title ==""){
+        alert("Please enter a movie title");
+        return;
+      }
+      else {
+        var movie = new Movie(title, rating, genre, description);
+        movieList.push(movie);
+        addMovieToList(movie);
+        
+        var theForm = document.getElementById("theForm");
+        theForm.reset();
+      }
+      
+    }
+      
+    function addMovieToList(movie){
+      var movieList = document.getElementById("movieList");
+      var li = document.createElement("li");
+      li.innerHTML = movie.print();
+      if(movieList.childElementCount == 0){
+        movieList.appendChild(li);
+      }
+      else {
+        movieList.insertBefore(li, movieList.firstChild);
+      }
+    }
+    
+  </script>
+</head>
+<body>
+  <h1> Movie List Builder </h1>
+  <form id="theForm">
+    <label for="title">Movie title: </label>
+      <input id="title" name="title" type="text" size="30" required><br>
+    <label for="rating">Rating: </label>
+     1 <input id="rating" name="rating" type="range" max="5" min="1"> 5<br>
+    <label for="genre" name="genre">
+      <select id="genre" name="genre">
+        <option value="drama" selected>Drama</option>
+        <option value="action" selected>Action</option>
+        <option value="comedy" selected>Comedy</option>
+        <option value="scifi" selected>Sci Fi</option>
+        <option value="thriller" selected>Thriller</option>
+      </select><br>
+    <label for="description">Description:</label>
+      <textarea id="description" name="description"></textarea>
+    <br>
+    <input type="button" id="submitButton" value="Add movie!"><br>
+  </form>
+  <ul id="movieList">
+  </ul>
+</body>
+</html>
+    
+      

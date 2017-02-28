@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <title>Mad Lib</title>
+ <meta charset="utf-8">
+ <script>
+  window.onload = init;
+     
+  function init() {
+   /* Write two lines of code here to get the 
+    * submit button, and assign the onclick property
+    * to a function named goMad.
+    */
+    
+    // Retrieving the button element so that we may assign an 'onclick' event, in this case it will call the goMad function
+    var button = document.getElementById("submit");
+    button.onclick = goMad;
+
+  }
+  
+  /*
+   * Complete the goMad() function so it gets all the input elements
+   * that contain words you need to complete the madlib puzzle.
+   * You can use either of the two methods we used in the lesson:
+   * document.getElementById() or document.getElementsByTagName()
+   * or a combination.
+   * Once you have retrieved all the words, use the "story" string
+   * variable to update the &lt;div> element in the page
+   * with the words.
+   */
+  function goMad() {
+    // Storing the input values entered in for later use
+    var words = document.getElementsByTagName("input");
+    // Appended the element calls with'value' to retrieve the specific strings that were stored as a result of the above declaration
+    var story = words[0].value + "! he said " + words[1].value + " as he jumped into his convertible " + words[2].value + " and drove off with his " + words[3].value + " wife."
+    // Retrieving the 'story' element so that we may append the story string to the innerHTML
+    var pInput = document.getElementById("story");
+    pInput.innerHTML = story;
+
+}
+     
+ </script>
+</head>
+<body>
+<form>
+<label for="exclamation">Exclamation:</label>
+<input id="exclamation" type="text" size="20"> <br>
+<label for="adverb">Adverb:</label>
+<input id="adverb" type="text" size="20"><br>
+<label for="noun">Noun:</label>
+<input id="noun" type="text" size="20"><br>
+<label for="adjective">Adjective:</label>
+<input id="adjective" type="text" size="20"><br>
+<input type="button" id="submit" value="Go Mad!">
+</form>
+
+<div id="story">
+</div>
+
+</body>
+</html>

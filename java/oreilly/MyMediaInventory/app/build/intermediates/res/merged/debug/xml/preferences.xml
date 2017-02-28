@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="@string/title_pref_types">
+         <CheckBoxPreference 
+            android:key="authorSort"
+            android:title="@string/title_pref_artist_sort"
+            android:summary="True or False"
+            android:defaultValue="false"
+            />
+        
+        <CheckBoxPreference 
+            android:key="books"
+            android:title="@string/title_pref_books"
+            android:summary="True or False"
+            android:defaultValue="true"
+            />
+        
+        <CheckBoxPreference 
+            android:key="movies"
+            android:title="@string/title_pref_movies"
+            android:summary="True or False"
+            android:defaultValue="true"
+            />
+        
+       <CheckBoxPreference 
+            android:key="music"
+            android:title="@string/title_pref_music"
+            android:summary="True or False"
+            android:defaultValue="true"
+            />
+    </PreferenceCategory>
+</PreferenceScreen>

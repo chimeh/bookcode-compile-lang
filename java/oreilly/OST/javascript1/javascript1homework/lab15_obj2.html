@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <title> Quiz </title>
+ <meta charset="utf-8">
+ <style>
+ .basic {
+  font-family: Helvetica, Verdana, sans-serif;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+ }
+ </style>
+ <script>
+ window.onload = init;
+ 
+ function init() {
+  div = document.querySelector(".basic");
+  div.onclick = changeStyle;
+ }
+ 
+ function changeStyle(){
+   // Retrieving all the elements with a class type of "basic"
+   var div = document.querySelector(".basic");
+   // Storing the border properties in a separate variable for easy modification or re-use
+   var borderProperties = "thick dotted yellow";
+   // Setting the new background color whenever the element is clicked
+   div.style.backgroundColor = "blue";
+   // Setting the new properties for the border
+   div.style.border = borderProperties;
+ }
+ </script>
+</head>
+<body>
+ <div class="basic">
+  Click to make me red!
+ </div>  
+</body>
+</html>

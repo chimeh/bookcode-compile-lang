@@ -1,0 +1,103 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:2:1-67:12
+	xmlns:android
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:2:11-69
+	package
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:3:5-46
+		INJECTED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml
+uses-sdk
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:7:5-9:41
+	android:targetSdkVersion
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:9:9-38
+		INJECTED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:8:9-34
+		INJECTED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:11:7-69
+	android:name
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:11:24-66
+application
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:13:5-65:19
+	android:label
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:16:9-41
+	android:allowBackup
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:14:9-35
+	android:icon
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:15:9-45
+	android:theme
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:17:9-42
+activity#com.ost.android2.MediaInventory.MediaListActivity
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:19:9-27:20
+	android:label
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:21:13-56
+	android:name
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:20:13-77
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:22:13-26:29
+action#android.intent.action.MAIN
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:23:17-69
+	android:name
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:23:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:25:17-77
+	android:name
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:25:27-74
+activity#com.ost.android2.MediaInventory.MediaActivity
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:29:9-32:20
+	android:label
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:31:13-58
+	android:name
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:30:13-73
+activity#com.ost.android2.MediaInventory.MediaBrowserActivity
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:34:10-37:20
+	android:label
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:36:13-55
+	android:name
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:35:13-80
+activity#com.ost.android2.MediaInventory.MediaURLListActivity
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:39:9-42:20
+	android:label
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:41:13-60
+	android:name
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:40:13-80
+activity#com.ost.android2.MediaInventory.MediaURLActivity
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:44:10-47:20
+	android:label
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:46:13-62
+	android:name
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:45:13-76
+activity#com.ost.android2.MediaInventory.MediaPreferenceActivity
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:49:9-51:20
+	android:label
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:50:19-72
+	android:name
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:49:19-89
+provider#com.ost.android2.MediaInventory.MediaInventoryContentProvider
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:53:9-56:62
+	android:exported
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:55:13-37
+	android:authorities
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:54:13-82
+	android:name
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:56:13-58
+provider#com.ost.android2.MediaInventory.MediaURLContentProvider
+ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:59:9-62:56
+	android:exported
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:61:14-38
+	android:authorities
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:60:14-77
+	android:name
+		ADDED from D:\Users\Gregg\StudioProjects\MyMediaInventory\app\src\main\AndroidManifest.xml:62:14-53

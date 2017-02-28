@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+  <application>obliquid</application>
+  <!-- version should match the pattern '^(?!-)[a-z\d-]{1,100}$'
+       1, 2, ...  are the development version
+       live       is the live version  
+  -->
+  <version>live</version>
+  <threadsafe>true</threadsafe>
+ 
+  <!-- Configure java.util.logging -->
+  <system-properties>
+    <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
+  </system-properties>
+  
+  <resource-files>
+      <exclude path="/favicon.ico"/>
+      <exclude path="/*.html"/>
+      <exclude path="/css/**"/>
+      <exclude path="/img/**"/>
+  </resource-files>
+  
+  <inbound-services>
+      <service>mail</service>
+      <service>xmpp_message</service>
+  </inbound-services>
+ 
+</appengine-web-app>

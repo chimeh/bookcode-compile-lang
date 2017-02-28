@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="2dp"
+    android:orientation="vertical"
+    android:background="@drawable/waterdroplets_blue"
+    tools:context=".StatusActivity">	
+    
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/labelTitle"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="@string/titleStatus"
+        android:textColor="@android:color/white"
+        />
+    
+    <!-- Status EditText -->
+
+    <TextView
+        android:id="@+id/textCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/char_count"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="right"
+        android:background="#cfff"
+         />
+
+  	<EditText
+  	    android:id="@+id/editTextStatus"
+  	    android:layout_width="fill_parent"
+  	    android:layout_height="0dip"
+  	    android:layout_weight="0.87"
+  	    android:gravity="top|center_horizontal"
+  	    android:hint="@string/hintText"
+  	    android:inputType="textMultiLine" >
+
+   </EditText>
+    
+   <!-- Update Button -->
+   <Button
+        android:id="@+id/buttonStatus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonUpdate"
+        android:textSize="20sp"
+        />
+</LinearLayout>

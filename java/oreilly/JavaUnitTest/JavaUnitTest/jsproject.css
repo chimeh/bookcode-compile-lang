@@ -1,0 +1,108 @@
+#container
+{
+	margin: 0 auto;
+	width: 100%;
+	background: #fff;
+}
+.formBorder{
+			background-color:#e3e3e3;
+			border: 2px solid black;
+			width:60%;
+			padding 20px;
+			margin-left:20%;
+			}
+			
+}
+
+#header
+{
+	
+	padding: 20px;
+}
+
+#header h1 { margin-left: 5%;
+			color:#333;
+			font-size:2.5em;
+			font-style:italic;
+			letter-spacing:15px;
+			text-align:center;
+			 }
+
+#navigation
+{
+	float: left;
+	width: 100%;
+	background: #333;
+}
+#navigation h3{
+		font-size:1.2em;
+		color:gray;
+		letter-spacing:6px;
+		text-align:center;
+		}
+}
+
+#footer ul
+{
+	margin: 0;
+	padding: 0;
+}
+
+#footer ul li
+{
+	padding:20px;
+	list-style-type: none;
+	display: inline;
+}
+
+#content-container
+{
+	float: left;
+	width: 100%;
+	background: #FFF url('layout-two-liquid-background.gif') repeat-y 68% 0;
+
+}
+
+#content
+{
+	clear: left;
+	float: left;
+	width: 60%;
+	padding: 10px 0;
+	margin: 0 0 0 4%;
+	display: inline;
+	
+}
+
+#content h2 { margin-left:20%;
+			color:gray;
+			font-style:italic;
+			 }
+			 
+#aside
+{
+	float: right;
+	width: 26%;
+	padding: 0px 0;
+	margin: 0 3% 0 0;
+			
+
+	display: inline;
+}
+
+#aside h2 { margin-left:20%;
+			color:gray;
+			font-style:italic;
+			 }
+
+#footer
+{
+	clear: left;
+	background: #ccc;
+	text-align: center;
+	padding: 5px;
+	height: 1%;
+}
+
+		
+}

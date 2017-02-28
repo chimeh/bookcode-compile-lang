@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>Document Fragments Project</title>
+    <meta charset="utf-8">
+    <style>
+        ul {
+            list-style-type: none;
+        }
+        img {
+            width: 70px;
+            vertical-align: middle;
+        }
+    </style>
+    <script>
+
+window.onload = init;
+
+var tweets = [
+    "When teaching math, it shouldn't just be: 'Answer this question:'. It should also be: 'Question this answer:'",
+    "Another reason to choose @OReillySchool: quizzes and projects graded by humans!",
+    "@OReillySchool Excellent! I love the new APIs that came with it, as well as the new tags and attributes.",
+    "That's great. I am really grateful for your program and will definitely continue to encourage folks to enroll in courses!"
+];
+
+function init(){
+  var button = document.getElementById("add");
+  
+  button.onclick = addTweets;
+}
+
+function addTweets(){
+  var ul = document.getElementById("tweets");
+  var tweetsFragment = document.createDocumentFragment();
+  
+  for(var i = 0; i < tweets.length; i++){
+    var li = document.createElement("li");
+    var img = document.createElement("img");
+    var spanItem = document.createElement("span");
+    
+    img.setAttribute("src", "tweet.jpg");
+    spanItem.innerHTML = tweets[i];
+    li.appendChild(img);
+    li.appendChild(spanItem);
+    tweetsFragment.appendChild(li);
+  }
+  ul.appendChild(tweetsFragment);
+}
+    </script>
+</head>
+<body>
+<form>
+    <h1>Tweets</h1>
+    <input type="button" id="add" value="Add Tweets">
+    <ul id="tweets">
+        <li><img src="tweet.jpg"><span>This is my tweet</span></li>
+    </ul>
+</form>
+</body>
+</html>     

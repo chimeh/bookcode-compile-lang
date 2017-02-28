@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title> Objects </title>
+  <meta charset="utf-8">
+  <script>
+  
+    window.onload = init;
+    
+    function init() {
+    var tilla = {
+      type: "dog",
+      name: "Tilla",
+      weight: 26,
+      likes: ["playing ball", "going for walks", "eating anything"]
+    };
+    
+    var pickles = {
+      type: "cat",
+      name: "Pickles",
+      weight: 7,
+      likes: ["sleeping", "eating butter"]
+    };
+    
+    var div = document.getElementById("pets");
+    
+    div.innerHTML = tilla.name + " enjoys ";
+    for(var i = 0; i < tilla.likes.length; i++){
+      div.innerHTML += tilla.likes[i];
+      if (i < tilla.likes.length - 1) {
+        div.innerHTML += " and ";
+      }
+     }
+   }
+  </script>
+</head>
+<body>
+  <div id="pets">
+  </div>
+</body>
+</html>

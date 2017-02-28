@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+       <string-array name="type">
+        <item>Book</item>
+        <item>Movie</item>
+        <item>Music</item>
+    </string-array>
+    
+    <string-array name="subtype">
+        <item>Book</item>
+        <item>eBook</item>
+        <item>Audio Book</item>
+        <item>MP3</item>
+        <item>CD</item>
+        <item>DVD</item>
+        <item>VHS</item>
+        <item>Blue Ray</item>
+        <item>LP</item>
+    </string-array>
+</resources>

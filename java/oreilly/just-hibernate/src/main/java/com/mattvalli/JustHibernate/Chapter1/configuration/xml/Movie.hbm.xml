@@ -1,0 +1,10 @@
+<hibernate-mapping>
+	<class name="com.mattvalli.JustHibernate.Chapter1.model.Movie" table="MOVIES">
+		<id name="id" column="ID">
+			<generator class="native" />
+		</id>
+		<property name="title" column="TITLE" />
+		<property name="director" column="DITRECTOR" />
+		<property name="synopsis" column="SYNOPSIS" />
+	</class>
+</hibernate-mapping>
