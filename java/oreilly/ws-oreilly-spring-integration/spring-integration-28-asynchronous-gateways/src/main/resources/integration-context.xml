@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<int:gateway id="printerGateway"
+		service-interface="com.oreilly.integration.gateway.EnhancedPrinterGateway">
+		<int:default-header name="default-header" value="123" />
+		<int:default-header name="person-id" expression="#args[0].id" />
+		<int:method name="print" request-channel="printChannel">
+			<int:header name="individual-header" expression="#args[0].firstName"/>
+		</int:method>
+		<int:method name="upperCase" request-channel="upperCaseChannel" />
+	</int:gateway>
+
+
+	<int:channel id="printChannel" /> <!-- Direct Channel -->
+	<int:channel id="upperCaseChannel" />
+
+	<int:service-activator ref="upperCaseService"
+		input-channel="upperCaseChannel" method="execute" />
+	<!-- instead of explicit drive output we use header to deliver output channel, 
+		output-channel="outputChannel" -->
+
+	<int:service-activator ref="printService"
+		method="print" input-channel="printChannel">
+	</int:service-activator>
+
+
+	<bean id="upperCaseService"
+		class="com.oreilly.integration.service.UpperCaseService" />
+
+	<bean id="printService"
+		class="com.oreilly.integration.service.PrintService" />
+
+
+</beans>

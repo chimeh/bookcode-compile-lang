@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<int:gateway id="printerGateway"
+		service-interface="com.oreilly.integration.gateway.PrinterGateway"
+		default-request-channel="inputChannel" />
+
+	<int:channel id="inputChannel" /> <!-- Direct Channel -->
+	<int:channel id="outputChannel" />
+
+	<int:filter input-channel="inputChannel"
+		output-channel="outputChannel"
+		expression="payload instanceof T(com.oreilly.integration.model.Person) and payload.name!=null and payload.name.equals('Ivan')">
+	</int:filter>
+
+
+	<int:service-activator ref="printService"
+		method="print" input-channel="outputChannel">
+	</int:service-activator>
+
+
+	<bean id="printService"
+		class="com.oreilly.integration.service.PrintService" />
+
+
+</beans>

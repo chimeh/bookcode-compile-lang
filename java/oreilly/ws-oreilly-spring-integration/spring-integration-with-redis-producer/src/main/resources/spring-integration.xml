@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:redis="http://www.springframework.org/schema/redis"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-redis="http://www.springframework.org/schema/integration/redis"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/redis http://www.springframework.org/schema/redis/spring-redis-1.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.3.xsd
+		http://www.springframework.org/schema/integration/redis http://www.springframework.org/schema/integration/redis/spring-integration-redis-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<int-redis:queue-outbound-channel-adapter
+		id="event-outbound-channel-adapter" channel="eventChannelJson"
+		serializer="serializer" auto-startup="true"
+		connection-factory="redisConnectionFactory" queue="my-event-queue" />
+
+	<int:gateway id="eventChannelGateway"
+		service-interface="com.example.demo.gateway.RedisChannelGateway"
+		error-channel="errorChannel" default-request-channel="eventChannel">
+		<int:default-header name="topic" value="queue" />
+	</int:gateway>
+
+	<int:channel id="eventChannelJson" />
+	<int:channel id="eventChannel" />
+
+
+	<bean id="serializer"
+		class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+
+	<int:object-to-json-transformer
+		input-channel="eventChannel" output-channel="eventChannelJson" />
+
+
+</beans>

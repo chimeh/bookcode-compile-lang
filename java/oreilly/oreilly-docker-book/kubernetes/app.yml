@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: couchbase-service
+  labels: 
+    name: couchbase-service-pod
+    context: oreilly-docker-book
+spec: 
+  ports:
+    - name: admin
+      port: 8091
+    - name: api
+      port: 8092
+    - name: query
+      port: 8093
+    - name: bucket
+      port: 11210
+  # label keys and values that must match in order to receive traffic for this service
+  selector: 
+    name: couchbase-rc-pod
+    context: oreilly-docker-book
+----
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: couchbase-rc
+  labels:
+    name: couchbase-rc
+    context: oreilly-docker-book
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: couchbase-rc-pod
+      labels:
+        name: couchbase-rc-pod
+        context: oreilly-docker-book
+    spec:
+      containers:
+      - name: couchbase-rc-pod
+        image: arungupta/oreilly-couchbase:latest
+        ports:
+        - containerPort: 8091
+        - containerPort: 8092
+        - containerPort: 8093
+        - containerPort: 11210
+----
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: wildfly-rc
+  labels:
+    name: wildfly-rc
+    context: oreilly-docker-book
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: wildfly
+        context: oreilly-docker-book
+    spec:
+      containers:
+      - name: wildfly-rc-pod
+        image: arungupta/oreilly-wildfly:latest
+        ports:
+        - containerPort: 8080

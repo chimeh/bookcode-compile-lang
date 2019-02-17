@@ -1,0 +1,53 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.1.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("io.spring.gradle:dependency-management-plugin:0.4.0.RELEASE")
+	}
+}
+
+plugins {
+	id 'io.franzbecker.gradle-lombok' version '1.14'
+	id 'java'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.MeterReads'
+version = '0.0.1-SNAPSHOT'
+
+bootJar {
+	baseName = 'gs-rest-service'
+	version =  '0.1.0'
+}
+
+repositories {
+	mavenCentral()
+    jcenter()
+    maven {
+        url 'https://repo.spring.io/libs-release'
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-aop')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.boot:spring-boot-devtools")
+	compile("io.springfox:springfox-swagger2:2.9.0")
+    compile("io.springfox:springfox-swagger-ui:2.9.0")
+    compile("com.h2database:h2")
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}

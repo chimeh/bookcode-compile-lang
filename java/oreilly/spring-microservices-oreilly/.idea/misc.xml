@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ClojureProjectResolveSettings">
+    <currentScheme>IDE</currentScheme>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-oauth-server/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-oauth-resource/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-oauth-client/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-config-client/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-eureka-client/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-eureka-client-2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-hystrix/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-simple-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-simple-service-2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-simple-service-3/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-library-ui/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-library-config/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-library-catalog/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-library-reservation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-library-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-microservices-library-edge/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8 (B112)" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="C:\Users\Cliff\.cargo\bin" />
+  </component>
+</project>

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: xvhx
+Build-Jdk: 10.0.2
+Implementation-Title: spring-integration-demo
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.oreilly.integration
+Implementation-Vendor: Pivotal Software, Inc.
+Created-By: Maven Integration for Eclipse
+

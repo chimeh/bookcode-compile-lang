@@ -1,0 +1,17 @@
+version: '2'
+services:
+  shopfront:
+    image: apetrovya/djshopfront
+    ports:
+     - "8010:8010"
+    links:
+      - productcatalogue
+      - stockmanager
+  productcatalogue:
+    image: apetrovya/djproductcatalogue
+    ports:
+     - "8020:8020"
+  stockmanager:
+    image: apetrovya/djstockmanager
+    ports:
+     - "8030:8030"
